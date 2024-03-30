@@ -81,9 +81,9 @@ def testing_model(question, prompt):
 page_title="I can help you to analyse the OpenFoodTox database"
 layout = 'centered'
 
-st.set_page_config(page_title=page_title, page_icon='🤖',layout=layout)
+st.set_page_config(page_title=page_title,layout=layout)
 st.header("OpenFoodTox AI Assistant")
-st.write("Hello I'm your AI assistant and I'm here to help you to gain insights about the OpenFoodTox database")
+st.write("Hello, I'm your AI assistant, and I'm here to help you gain insights about the OpenFoodTox database.")
 
 with st.sidebar:
     st.write('*What Is the AI OpenFoodTox Assistan?*')
