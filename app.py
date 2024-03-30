@@ -1,6 +1,5 @@
 # import libraries
 import os
-import chainlit as cl
 from langchain_community.llms import HuggingFaceHub
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
@@ -74,7 +73,7 @@ def testing_model(question, prompt):
         print("No answer found.")
 
     # Using the sql_command on the read_sql_query
-    data = read_sql_query(sql_command, "OpenFoodTox.db")
+    data = read_sql_query(sql_command, "OpenFoodTox.db")[0][0]
     return data
 
 
