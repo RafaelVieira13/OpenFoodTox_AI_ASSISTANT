@@ -81,27 +81,27 @@ def testing_model(question, prompt):
 page_title="I can help you to analyse the OpenFoodTox database"
 layout = 'centered'
 
-st.set_page_config(page_title=page_title, page_icon='🤖',layout=layout)
-st.header("OpenFoodTox AI Assistant")
+st.set_page_config(page_title=page_title,layout=layout)
+st.header("OpenFoodTox AI Analyzer")
 st.write("Hello I'm your AI assistant and I'm here to help you to gain insights about the OpenFoodTox database")
+st.image(image='openfoodtox_update.png', width=600)
 
 with st.sidebar:
-    st.write('*What Is the AI OpenFoodTox Assistan?*')
-    st.caption('''OpenFoodTox is your go-to resource for understanding chemical hazards in food. It's an open-source database filled with toxicological information, accessible to everyone.
+    st.image(image='EFSA_horizon_RGB_EN 1@4x.png')
+    st.header('*What Is the OpenFoodTox AI Analyzer?*')
+    st.write('''OpenFoodTox is your go-to resource for understanding chemical hazards in food. It's an open-source database filled with toxicological information, accessible to everyone.
 
-And now, with the OpenFoodTox AI Assistant, you have an easy-to-use tool at your fingertips. It's perfect for risk assessors, managers, and anyone else involved in food safety.
+And now, with the OpenFoodTox AI Analyzer, you have an easy-to-use tool at your fingertips. It's perfect for risk assessors, managers, and anyone else involved in food safety.
 
 Here's what it offers:
 
-* Instant access to toxicological data, making risk assessment a breeze.
-* Simple navigation through complex regulations, so you can stay compliant without the headache.
-* Quick identification of chemical hazards in food products, ensuring safety for consumers.
-* Opportunities for collaboration and knowledge sharing within the industry.''')
+* Instant access to toxicological data through prompt responses.
+* Quick identification of chemical hazards in food products.''')
     st.divider()
     st.caption("Author: Rafael Vieira;  rafael11934@hotmail.com")
 
 
-question = st.text_input("Input", key='input')
+question = st.text_input("Question", key='input')
 submit = st.button('Ask the question')
 
 # if submit is clicked
