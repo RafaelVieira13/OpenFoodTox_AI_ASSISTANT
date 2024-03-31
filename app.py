@@ -82,9 +82,11 @@ page_title="I can help you to analyse the OpenFoodTox database"
 layout = 'centered'
 
 st.set_page_config(page_title=page_title,layout=layout)
+
 st.header("OpenFoodTox AI Analyzer")
 st.write("Hello I'm your AI assistant and I'm here to help you to gain insights about the OpenFoodTox database")
 st.image(image='openfoodtox_update.png', width=600)
+
 
 with st.sidebar:
     st.image(image='EFSA_horizon_RGB_EN 1@4x.png')
