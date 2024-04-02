@@ -1,27 +1,18 @@
+# import functions
+from functions import read_sql_query, llm_response, apply_model
+
 # import libraries
-import os
-from langchain_community.llms import HuggingFaceHub
+#import os
+#from langchain_community.llms import HuggingFaceHub
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import LLMChain
-import sqlite3
-import re
+#from langchain.chains import LLMChain
+#import sqlite3
+#import re
 import streamlit as st
 
-### LLM Model -- Functions and Setting Up the Model ###
-
-# setting api key
-os.environ['HuggingFaceHub_API_TOKEN'] = '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'
-
-# Function to Load the LLM model and provide sql query as response
-def llm_response(question, prompt):
-    llm=HuggingFaceHub(repo_id="google/gemma-2b-it")
-    llm_chain = LLMChain(llm=llm ,prompt=prompt)
-    response = llm_chain.run(question)
-    return response
 
 
-# Defining the Prompt
-
+### Defining the Prompt ###
 template = """
 Context: You are an expert in converting English questions to SQL lite queries!
 The SQL database has the name OpenFoodTox.db and has the following table Substance_Characterization with the following columns: Substance, has, Component, CASNumber,
@@ -41,40 +32,6 @@ SQL QUERY: """
 
 prompt = PromptTemplate(input_variables=['query'],
                                        template = template)
-
-
-# Function to retrieve query from the SQL database
-def read_sql_query(sql, db):
-    print(sql)  # Print the SQL query before executing
-    
-    conn = sqlite3.connect(db)
-    cur = conn.cursor()
-    cur.execute(sql)
-    rows = cur.fetchall()
-    conn.commit()
-    conn.close()
-    
-    print("Query result:")
-    for row in rows:
-        print(row)
-    
-    return rows
-
-
-# Function to apply the model
-def testing_model(question, prompt):
-    llm_result = llm_response(question, prompt)
-
-    # Using Regex to get just the Answer, which contains the sql command
-    match = re.search(r'SQL QUERY:\s*(.*)', llm_result, re.MULTILINE)
-    if match:
-        sql_command = match.group(1).strip()
-    else:
-        print("No answer found.")
-
-    # Using the sql_command on the read_sql_query
-    data = read_sql_query(sql_command, "OpenFoodTox.db")
-    return data
 
 
 ### Creating streamlit app ###
@@ -108,6 +65,7 @@ submit = st.button('Ask the question')
 
 # if submit is clicked
 if submit:
-    answer = testing_model(question, prompt)
+    model_name = "google/gemma-7b"
+    answer = apply_model(model_name=model_name,question=question, prompt=prompt)
     st.header(answer)
 
