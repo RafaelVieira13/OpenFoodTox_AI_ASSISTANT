@@ -73,7 +73,7 @@ def testing_model(question, prompt):
         print("No answer found.")
 
     # Using the sql_command on the read_sql_query
-    data = read_sql_query(sql_command, "OpenFoodTox.db")[0][0]
+    data = read_sql_query(sql_command, "OpenFoodTox.db")
     return data
 
 
