@@ -36,7 +36,7 @@ prompt = PromptTemplate(input_variables=['query'],
 
 ### Creating streamlit app ###
 page_title="I can help you to analyse the OpenFoodTox database"
-layout = 'centered'
+layout = 'wide'
 
 st.set_page_config(page_title=page_title,layout=layout)
 
@@ -66,6 +66,9 @@ submit = st.button('Ask the question')
 # if submit is clicked
 if submit:
     model_name = "google/gemma-7b"
-    answer = apply_model(model_name=model_name,question=question, prompt=prompt)
-    st.header(answer)
+    data = apply_model(model_name=model_name,question=question, prompt=prompt)
+    st.subheader('Answer:')
+    for row in data:
+        print(row)
+        st.header(row)
 
