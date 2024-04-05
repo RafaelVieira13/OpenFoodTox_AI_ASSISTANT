@@ -15,17 +15,43 @@ import streamlit as st
 ### Defining the Prompt ###
 template = """
 Context: You are an expert in converting English questions to SQL lite queries!
-The SQL database has the name OpenFoodTox.db and has the following table Substance_Characterization with the following columns: Substance, has, Component, CASNumber,
-ECRefNo, MolecularFormula, and smiles.
+The SQL database has the name OpenFoodTox_TEST.db and has the following tables:
+ - Substance_Characterization with the following columns: Substance, has, Component, CASNumber, ECRefNo, MolecularFormula, and smiles.
+ - Genotoxicity with the following columns: Substance, Author, Year, OutputID, Genotoxicity.
+ - EFSAOUTPUTS witht the following columns: Substance, OutputID, LegalBasis, Panel, Published, Title, OutputType, DOI, URL
+
 For example:
 Example 1 - How many substances are available within OpenFoodTox?
-The SQL command will be something like this: SELECT COUNT(DISTINCT Substance) FROM Substance_Characterization;
+The SQL command will be something like this: SELECT COUNT(DISTINCT Substance) FROM;
+
 Example 2 - What is the CAS number of the Substance trans-3-Hexenyl hexanoate?
 The SQL command will be something like this: SELECT CASNumber FROM Substance_Characterization WHERE Substance = 'trans-3-Hexenyl hexanoate';
+
+Example 3 - How many substances are not genotoxic?
+The SQL command will be something like this: SELECT COUNT(DISTINCT Substance) FROM Genotoxicity WHERE Genotoxicity = 'Negative';
+
+Example 4 - How many substances are genotoxic?
+The SQL command will be something like this: SELECT COUNT(DISTINCT Substance) FROM Genotoxicity WHERE Genotoxicity = 'Positive';
+
+Example 5 - Is the following substance'(+)-Lupanine' genotoxic?
+The SQL command will be something like this: SELECT DISTINCT Genotoxicity FROM Genotoxicity WHERE Substance = '(+)-Lupanine';
+
+Example 6 - How many Efsa opinions are available in OpenFoodTox?
+The SQL command will be something like this: SELECT COUNT(DISTINCT OutputID) FROM EFSAOUTPUTS WHERE OutputType = 'EFSA opinion';
+
+Example 7 - How many Efsa opinions are available in OpenFoodTox for the following substance: '(-)-Alpha-elemol'?
+The SQL command will be something like this: SELECT COUNT(DISTINCT OutputID) FROM EFSAOUTPUTS WHERE OutputType = 'EFSA opinion' AND Substance = '(-)-Alpha-elemol';
+
+Example 8 - Tell me how many EFSA statements are available in OpenFoodTox?
+The SQL command will be something like this: SELECT COUNT(DISTINCT OutputID) FROM EFSAOUTPUTS WHERE OutputType = 'EFSA statement';
+
 Also, the SQL command should not have ' and the () at the beginning or at the end of the SQL word in the output.Your output should be just the SQL command. 
 For example:
+
 If I ask you 'What is the CAS number of the Substance trans-3-Hexenyl hexanoate?' Your output must be just the SQL command, like this:  SELECT CASNumber FROM Substance_Characterization WHERE Substance = 'trans-3-Hexenyl hexanoate'.
 Don't Say anything else!!!!!
+
+
 Question: {query}
 
 SQL QUERY: """

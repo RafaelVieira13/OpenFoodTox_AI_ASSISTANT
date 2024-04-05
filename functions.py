@@ -46,5 +46,5 @@ def apply_model(model_name, question, prompt):
         print("No answer found.")
 
     # Using the sql_command on the read_sql_query
-    data = read_sql_query(sql_command, "OpenFoodTox.db")
+    data = read_sql_query(sql_command, "OpenFoodTox_TEST.db")
     return data
