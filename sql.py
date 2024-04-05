@@ -12,8 +12,7 @@ subst_charact = pd.read_csv('SubstanceCharacterisation_KJ_2022.csv')
 genotoxicity = pd.read_csv('Genotoxicity_KJ_2022.csv')
 efsa_outputs = pd.read_csv('EFSAOutputs_KJ_2022.csv')
 ref_values = pd.read_csv('ReferenceValues_KJ_2022.csv')
-
-#genotoxicity = pd.read_excel('Genotoxicity_KJ_2022.xlsx')
+ref_points = pd.read_csv('ReferencePoints_KJ_2022.csv')
 
 '''
 2. OpenFoodTox database creation
@@ -31,6 +30,7 @@ subst_charact.to_sql('Substance_Characterization', connection, if_exists='replac
 genotoxicity.to_sql('Genotoxicity', connection, if_exists='replace')
 efsa_outputs.to_sql('EFSAOUTPUTS', connection, if_exists='replace')
 ref_values.to_sql('Reference_Values', connection, if_exists='replace')
+ref_points.to_sql('Reference_Points', connection, if_exists='replace')
 
 # Closing Connection
 connection.commit()
