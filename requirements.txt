@@ -3,3 +3,4 @@ langchain_community==0.0.29
 langchain_core==0.1.36
 pandas==2.2.1
 streamlit==1.32.2
+huggingface_hub
