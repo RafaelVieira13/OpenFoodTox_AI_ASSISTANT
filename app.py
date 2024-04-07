@@ -6,6 +6,9 @@ from langchain_core.prompts import PromptTemplate
 import streamlit as st
 import os
 
+page_title="I can help you to analyse the OpenFoodTox database"
+layout = 'wide'
+st.set_page_config(page_title=page_title,layout=layout)
 
 '''
 1. LangSmith Setup
@@ -107,10 +110,6 @@ prompt = PromptTemplate(input_variables=['query'],
 
 
 ### Creating streamlit app ###
-page_title="I can help you to analyse the OpenFoodTox database"
-layout = 'wide'
-
-st.set_page_config(page_title=page_title,layout=layout)
 
 st.header("OpenFoodTox AI Analyzer")
 st.write("Hello I'm your AI assistant and I'm here to help you to gain insights about the OpenFoodTox database")
