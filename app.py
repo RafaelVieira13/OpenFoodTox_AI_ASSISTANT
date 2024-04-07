@@ -2,15 +2,18 @@
 from functions import read_sql_query, llm_response, apply_model
 
 # import libraries
-#import os
-#from langchain_community.llms import HuggingFaceHub
 from langchain_core.prompts import PromptTemplate
-#from langchain.chains import LLMChain
-#import sqlite3
-#import re
 import streamlit as st
+import os
 
 
+'''
+1. LangSmith Setup
+'''
+os.environ['LANGCHAIN_TRACING_V2']="true"
+os.environ['LANGCHAIN_ENDPOINT']="https://api.smith.langchain.com"
+os.environ['LANGCHAIN_API_KEY']="ls__8ba8cebf388a4bbca87ffdd714f18150"
+os.environ['LANGCHAIN_PROJECT']="OpenFoodTox AI Analyzer"
 
 ### Defining the Prompt ###
 template = """
