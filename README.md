@@ -23,5 +23,8 @@ Here's what it offers:
 
 ![image](https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT/assets/129581165/c4ae1821-06b9-45d2-8fa1-4c90b0c3f3e9)
 
+Python/SQL Script: sql.py
+
+
  ## Final APP
   https://oftaiassistant.streamlit.app/
