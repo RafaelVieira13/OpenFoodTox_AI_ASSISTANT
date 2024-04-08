@@ -11,6 +11,8 @@ Here's what it offers:
 ## How the App Works?
 ![image](https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT/assets/129581165/c7597402-84cc-4e5a-89c4-f228ec1a4dcd)
 
+The OpenFoodTox AI Analyzer operates by providing prompts within the application.These prompts are then transformed into SQL queries using Google Gemma 7b LLM. Subsequently, a Python function is invoked to extract the SQL query from the model's output, which in turn is utilized to retrieve the final answer from the SQL database
+
 # Tools Used
 * Model Name: Google Gemma 7b
 * Programming Languages: Python and SQL
