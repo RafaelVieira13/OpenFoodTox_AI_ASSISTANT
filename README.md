@@ -20,6 +20,7 @@ The OpenFoodTox AI Analyzer operates by providing prompts within the application
 * Front-end : Streamlit
 * Model Fine-Tuning Library: Transformers
 * Model Evaluation/Monitorization: LangSmith
+*  Databse: SQL Lite
 
 ## Project Architecture
 
