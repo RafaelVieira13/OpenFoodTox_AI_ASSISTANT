@@ -32,14 +32,14 @@ The OpenFoodTox AI Analyzer operates by providing prompts within the application
 
 ## Advantages
 * Faster way to perform qucik analysis about OpenFoodTox;
-* User-firendly way to analyse OpenFoodTox;
+* More user-firendly way to analyse OpenFoodTox;
 * More intuitive;
-* 
+* Enhance user interactions
 
 ## Limitations
 * Not suitable for advance analysis;
-* Model cannot recognize diferences between some words (e.g with and without);
-* 
+* Model doesn't recognize the difference between some words (e.g with and without);
+* May generate wrong answers;
 
  ## Final APP
   Streamlit WebAPP: https://oftaiassistant.streamlit.app/
