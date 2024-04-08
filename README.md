@@ -42,8 +42,8 @@ The OpenFoodTox AI Analyzer operates by providing prompts within the application
 * May generate wrong answers;
 
  ## Final APP
-  Streamlit WebAPP: https://oftaiassistant.streamlit.app/
-  Langsmith: https://www.langchain.com/langsmith
+ * Streamlit WebAPP: https://oftaiassistant.streamlit.app/
+ * Langsmith: https://www.langchain.com/langsmith
 
   ## Further Work
   * OpenFoodTox SQL Database update and maintenance.
