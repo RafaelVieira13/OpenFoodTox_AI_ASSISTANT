@@ -13,7 +13,7 @@ Here's what it offers:
 
 The OpenFoodTox AI Analyzer operates by providing prompts within the application.These prompts are then transformed into SQL queries using Google Gemma 7b LLM. Subsequently, a Python function is invoked to extract the SQL query from the model's output, which in turn is utilized to retrieve the final answer from the SQL database
 
-# Tools Used
+## Tools Used
 * Model Name: Google Gemma 7b
 * Programming Languages: Python and SQL
 * AI Framework: LangChain
@@ -29,6 +29,17 @@ The OpenFoodTox AI Analyzer operates by providing prompts within the application
 * Python/SQL Script: https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT/blob/one_openfoodtox_table/sql.py
 * Functions to Call the Model and Convert Prompt to SQL Query and to a Real Answer: https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT/blob/one_openfoodtox_table/functions.py
 * App Creation: https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT/blob/one_openfoodtox_table/app.py
+
+## Advantages
+* Faster way to perform qucik analysis about OpenFoodTox;
+* User-firendly way to analyse OpenFoodTox;
+* More intuitive;
+* 
+
+## Limitations
+* Not suitable for advance analysis;
+* Model cannot recognize diferences between some words (e.g with and without);
+* 
 
  ## Final APP
   Streamlit WebAPP: https://oftaiassistant.streamlit.app/
