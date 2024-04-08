@@ -28,4 +28,6 @@ Here's what it offers:
 * App Creation: https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT/blob/one_openfoodtox_table/app.py
 
  ## Final APP
-  https://oftaiassistant.streamlit.app/
+  Streamlit WebAPP: https://oftaiassistant.streamlit.app/
+  Langsmith: https://www.langchain.com/langsmith
+  
