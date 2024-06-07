@@ -1,64 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {margin:0;}
+body {
+  font-family: "Lato", sans-serif;
+}
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #22294D;
+.sidenav {
+  height: 100%;
+  width: 350px;
   position: fixed;
+  z-index: 1;
   top: 0;
-  width: 100%;
-  font-size: 20px;
-  height: 60px;
-  
+  left: 0;
+  background-color: #e8ebfc;
+  /* opacity: 0.9; */
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-li {
-  display: inline-block; /* Change float to inline-block */
-}
-
-li a {
+.sidenav img {
+  top: 10px;
   display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+  margin: 30px auto 0; /* Center the image horizontally and add 20px margin on top */
+  height: auto; /* Let the browser maintain aspect ratio */
+  max-width: 80%; /* Limit the maximum width of the image */
+}
+
+.sidenav h3 {
+  padding: 40px 8px 6px 16px;
   text-decoration: none;
-  height: 60px;
-  line-height: 30px;
+  font-size: 16px;
+  color:#363636;
+  display: block;
 }
 
-li a:hover:not(.active) {
-  background-color: #787878;
+.sidenav p {
+  padding: 5px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  color:#171717;
+  display: block;
 }
 
-.active {
-  background-color: white;
-  color: #232323;
+.sidenav ul li {
+  font-size: 14px;
+  color:#171717;
 }
 
+.sidenav .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.sidenav .button {
+  padding: 20px;
+  margin: 5px 5px; /* Consistent margin for all buttons */
+  color: #061c5d;
+  font-weight: bold;
+  display: block;
+  background-color: rgb(250, 250, 255);
+  text-align: center;
+  border-radius: 15px;
+  width: calc(100% - 120px); /* Adjust width to fit inside the margin */
+  padding-bottom: 20px;
+}
+
+.main {
+  margin-left: 350px; 
+  font-size: 20px; 
+  padding: 40px 20px;
+}
+
+.main p {
+  font-size: 14px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 </style>
 </head>
 <body>
 
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
-
-<div style="padding:20px;margin-top:30px;background-color:white;height:1500px;">
-  <h1>Fixed Top Navigation Bar</h1>
-  <h2>Scroll this page to see the effect</h2>
-  <h2>The navigation bar will stay at the top of the page while scrolling</h2>
-  <p>Some text some text some text some text..</p>
+<div class="sidenav">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/EFSA_logo.svg">
+  <h3>What Is the OpenFoodTox AI Analyzer?</h3>
+  <p>OpenFoodTox is your go-to resource for understanding chemical hazards in food.
+    It's an open-source database filled with toxicological information, accessible to everyone.<br><br>
+    Now, with the OpenFoodTox AI Analyzer, you have an easy-to-use tool at your fingertips.
+    It's perfect for risk assessors, managers, and anyone involved in food safety.<br><br>
+    
+    Here's what it offers:</p>
+  <ul>
+    <li>Instant access to toxicological data through prompt responses.</li>
+    <li>Quick identification of chemical hazards in food products.</li>
+  </ul>
+  <div class="buttons">
+    <a href="https://www.efsa.europa.eu/en/data-report/chemical-hazards-database-openfoodtox" class="button openfoodtox-button" target="_blank">OpenFoodTox Database</a>
+    <a href="https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT" class="button about-button" target="_blank">Documentation</a>
+    <a href="https://www.linkedin.com/in/rafael-vieira-5226941ba/" class="button about-button" target="_blank">Contact</a>
+  </div>
 </div>
 
-</body>
-</html>
+<div class="main">
+  <h2>OpenFoodTox AI Analyzer</h2>
 
+  <div>
+    <div id="chatbot">
+      <p class="botText"><span>Hi I'm here to help you getting insights about OpenFoodTox</span></p>
+    </div>
+      <div id="user-input">
+        <input type="text" id="testInput" name="userQuestion" placeholder="Make your Question About OpenFoodTox..."/>
+        <input type="send" value="Send" id="buttonInput"/>
+      </div>
+    </div>
+</div>
+   
+</body>
+</html> 
