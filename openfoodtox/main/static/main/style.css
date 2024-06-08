@@ -1,0 +1,143 @@
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #e8ebfc;
+    /* opacity: 0.9; */
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav img {
+    top: 10px;
+    display: block;
+    margin: 30px auto 0; /* Center the image horizontally and add 20px margin on top */
+    height: auto; /* Let the browser maintain aspect ratio */
+    max-width: 80%; /* Limit the maximum width of the image */
+  }
+  
+  .sidenav h3 {
+    padding: 40px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color:#363636;
+    display: block;
+  }
+  
+  .sidenav p {
+    padding: 5px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    color:#171717;
+    display: block;
+  }
+  
+  .sidenav ul li {
+    font-size: 14px;
+    color:#171717;
+  }
+  
+  .sidenav .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+  }
+  
+  .sidenav .button {
+    padding: 20px;
+    margin: 5px 5px; /* Consistent margin for all buttons */
+    color: #061c5d;
+    font-weight: bold;
+    display: block;
+    background-color: rgb(250, 250, 255);
+    text-align: center;
+    border-radius: 15px;
+    width: calc(100% - 120px); /* Adjust width to fit inside the margin */
+    padding-bottom: 20px;
+  }
+  
+  .main {
+    margin-left: 350px; 
+    font-size: 20px; 
+    padding: 40px 20px;
+  }
+  
+  .main p {
+    font-size: 14px;
+  }
+
+  #chatbot{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+
+  .botText{
+    font-family: monospace;
+    font-size: 14px;
+    text-align: left;
+    line-height: 25px;
+    color: rgb(109,111, 109)
+  }
+
+  #userInput {
+    position: fixed;
+    bottom: 40px;
+    left: 65%;
+    transform: translateX(-50%);
+    width: 70%;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+}
+
+  #textInput{
+    border: 3px solid white;
+    border-bottom: 3px solid #afafaf;
+    font-family: monospace;
+    font-size: 14px;
+    width: 60%;
+    padding: 16px;
+    color: rgb(213, 67, 41);
+  }
+
+  #buttonInput{
+    padding: 5px;
+    font-family: monospace;
+    font-size: 14px;
+    border: 3px solid #5b605c;
+    background-color: rgb(40,48,40);
+    color: white;
+    border-radius: 10px;
+  }
+
+  .userText{
+    text-align: right;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 25px;
+    color: rgb(109,111, 109)
+
+
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }

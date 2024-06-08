@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}"/>
+      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="sidenav">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/EFSA_logo.svg" alt="EFSA logo">
+  <h3>What Is the OpenFoodTox AI Analyzer?</h3>
+  <p>OpenFoodTox is your go-to resource for understanding chemical hazards in food.
+    It's an open-source database filled with toxicological information, accessible to everyone.<br><br>
+    Now, with the OpenFoodTox AI Analyzer, you have an easy-to-use tool at your fingertips.
+    It's perfect for risk assessors, managers, and anyone involved in food safety.<br><br>
+    
+    Here's what it offers:</p>
+  <ul>
+    <li>Instant access to toxicological data through prompt responses.</li>
+    <li>Quick identification of chemical hazards in food products.</li>
+  </ul>
+  <div class="buttons">
+    <a href="https://www.efsa.europa.eu/en/data-report/chemical-hazards-database-openfoodtox" class="button openfoodtox-button" target="_blank">OpenFoodTox Database</a>
+    <a href="https://github.com/RafaelVieira13/OpenFoodTox_AI_ASSISTANT" class="button about-button" target="_blank">Documentation</a>
+    <a href="https://www.linkedin.com/in/rafael-vieira-5226941ba/" class="button about-button" target="_blank">Contact</a>
+  </div>
+</div>
+<div class="main">
+  <div>
+    <div id="chatbot">
+      <p class="botText"><span>I'm here to help you gain insights about OpenFoodTox</span></p>
+    </div>
+    <div id="userInput">
+      <input type="text" id="textInput" name="userMessage" placeholder="Make your Question About OpenFoodTox..."/>
+      <input type="submit" value="Send" id="buttonInput"/>
+    </div>
+  </div>
+</div>
+<script>
+  function getUserResponse(){
+    var userText = $('#textInput').val();
+    var userHTML = "<p class='userText'>User: <span>" + userText + "</span></p>";
+    $('#textInput').val("");
+    $('#chatbot').append(userHTML);
+    $.get('/main/getResponse', {userMessage:userText}).done(function(data){
+      var returnedMessage = "<p class='botText'>Answer: <span>" + data + "</span></p>";
+       $('#chatbot').append(returnedMessage)
+    })
+  }
+  $('#buttonInput').click(function(){
+    getUserResponse();
+  });
+</script>
+</body>
+</html>
