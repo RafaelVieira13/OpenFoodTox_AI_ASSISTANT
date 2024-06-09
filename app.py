@@ -137,7 +137,7 @@ if submit:
     st.write('Answer:')
     if data:
         data_download = pd.DataFrame(data)
-        st.write(data_download)
+        st.dataframe(data_download, width=800)
     else:
         st.subheader('Answer:')
         st.write("No data returned from the model.")
