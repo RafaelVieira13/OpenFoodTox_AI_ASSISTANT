@@ -42,7 +42,7 @@ The OpenFoodTox AI Analyzer operates by providing prompts within the application
 * May generate wrong answers;
 
  ## Final APP
- * Streamlit WebAPP: https://oftaiassistant.streamlit.app/
+ * Streamlit WebAPP: https://openfoodtoxaiassistant.streamlit.app/
  * Langsmith: https://www.langchain.com/langsmith
 
   ## Further Work
